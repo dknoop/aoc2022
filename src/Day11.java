@@ -66,18 +66,18 @@ public class Day11 {
             "    If false: throw to monkey 5";
 
     static class Monkey {
-        LinkedList<Long> items;
+        List<Long> items;
         LongFunction<Long> operation;
         LongFunction<Integer> nextMonkeyCalculator;
         int inspectionCounter = 0;
 
-        public Monkey(LinkedList<Long> items, LongFunction<Long> operation, LongFunction<Integer> nextMonkeyCalculator) {
+        public Monkey(List<Long> items, LongFunction<Long> operation, LongFunction<Integer> nextMonkeyCalculator) {
             this.items = items;
             this.operation = operation;
             this.nextMonkeyCalculator = nextMonkeyCalculator;
         }
 
-        public LinkedList<Long> getItems() {
+        public List<Long> getItems() {
             return items;
         }
 
@@ -117,7 +117,7 @@ public class Day11 {
             // get items
             String itemString = lines[i+1].split(": ")[1];
             String[] items = itemString.split(", ");
-            LinkedList<Long> parsedItems = new LinkedList<>();
+            List<Long> parsedItems = new ArrayList<>();
             for (String item : items) {
                 parsedItems.add(Long.parseLong(item));
             }
